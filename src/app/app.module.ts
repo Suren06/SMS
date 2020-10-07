@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { CreateMemberComponent } from './member/create-member/create-member.component';
 import { UpdateMemberComponent } from './member/update-member/update-member.component';
 import { MemberListComponent } from './member/member-list/member-list.component';
+import { MemberService } from './service/member.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,9 +19,11 @@ import { MemberListComponent } from './member/member-list/member-list.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [MemberService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
